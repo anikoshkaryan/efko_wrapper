@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header_footer.css">
+    <link rel="icon" href="/images/main_logo.png">
+        <title>Контакты</title>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=fef7e3c9-583a-4e95-a050-8cee33b80427&lang=ru_RU" type="text/javascript"></script>
+    
+        <script type="text/javascript">
+           ymaps.ready(function () {
+       var myMap = new ymaps.Map('map', {
+               center: [50.627749, 38.677522],
+               zoom: 15
+           }, {
+               searchControlProvider: 'yandex#search'
+           }),
+    
+           // Создаём макет содержимого.
+           MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+               '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+           ),
+    
+           myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+               hintContent: 'Собственный значок метки',
+               balloonContent: 'Это красивая метка'
+           }, {
+               // Опции.
+               // Необходимо указать данный тип макета.
+               iconLayout: 'default#image',
+               // Своё изображение иконки метки.
+               iconImageHref: '../images/sign_map_second.png',
+               // Размеры метки.
+               iconImageSize: [167, 165],
+               // Смещение левого верхнего угла иконки относительно
+               // её "ножки" (точки привязки).
+               iconImageOffset: [-5, -38]
+           }),
+    
+           myPlacemarkWithContent = new ymaps.Placemark([50.627749, 38.677522], {
+               hintContent: 'Собственный значок метки с контентом',
+               balloonContent: 'А эта — новогодняя',
+               iconContent: '12'
+           }, {
+               // Опции.
+               // Необходимо указать данный тип макета.
+               iconLayout: 'default#imageWithContent',
+               // Своё изображение иконки метки.
+               iconImageHref: 'images/ball.png',
+               // Размеры метки.
+               iconImageSize: [48, 48],
+               // Смещение левого верхнего угла иконки относительно
+               // её "ножки" (точки привязки).
+               iconImageOffset: [-24, -24],
+               // Смещение слоя с содержимым относительно слоя с картинкой.
+               iconContentOffset: [-5000, -5000],
+               // Макет содержимого.
+               iconContentLayout: MyIconContentLayout
+           });
+    
+       myMap.geoObjects
+           .add(myPlacemark)
+           .add(myPlacemarkWithContent);
+    });
+       </script>
+</head>
+<body>
+  <div class="efko_main_wrapper">
+      <header>
+            <div class = "header_wrapper">
+                <div class= "header_logo_wrapper">
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="272" height="95" viewBox="0 0 272 95"><g><g><image width="272" height="95" xlink:href="data:image/png;base64,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"/></g></g></svg>
+                    </a>
+                </div>
+                <div class = "header_second_logo_wrapper">
+                     <a href="">
+                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="113" height="93" viewBox="0 0 113 93"><g><g><image width="113" height="93" xlink:href="data:image/png;base64,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"/></g></g></svg>
+                     </a>
+                </div>
+            </div>
+          
+      </header>
+      <main>
+         
+          <section class="contacts_top">
+              <div class="contacts_top_wrapper">
+                  <div class="contacts_top_img_wrapper">
+                      <img src="../images/general_banner_img.png" alt="">
+                  </div>
+                  <p class="contacts_img_title">Контакты</p>
+              </div>
+          </section>
+          <section class="map">
+       
+              <div class="map_wrapper">
+                <div id="map" ></div>
+                <div class="contacts_info_wrapper">
+                    <div class="form_sign_img">
+                        <img src="../images/form_sign.png" alt="">
+                    </div>
+                    <div class="contacts_info_main_wrapper">
+                        <h2 class="contacts_info_title">ООО «ЭФКО Пищевые ингредиенты»</h2>  
+                        <div class="contacts_info_text_svg_wrapper">
+                            <div class="contacts_svg_wrapper">
+                                <img src="../images/place_mark.png" alt="">
+                             </div>
+                            <p class="contacts_info_text">
+                                Россия, Белгородская область, 
+                                г. Алексеевка, ул. Фрунзе, 4
+                            </p>
+                          
+                        </div>
+                        <div class="contacts_info_text_svg_wrapper">
+                            <div class="contacts_info_svg">
+                                <img src="../images/telefone_second.png" alt="">
+                            </div>
+                            <p class="contacts_info_text">+7 (47234) 77-100</p>
+                          
+                        </div>
+                        <div class="contacts_info_text_svg_wrapper">
+                            <div class="contacts_svg_wrapper">
+                                <img src="../images/mail.png" alt="">
+                             </div>
+                            <p class="contacts_info_text"> food@efko.ru</p>
+                         
+                        </div>
+                        <div class="contacts_info_details_wrapper">
+                            <p class="contacts_info_second_title">
+                                По всем интересующим Вас вопросам можно обращаться:
+        
+                            </p>
+                            <div class="contacts_info_text_svg_wrapper">
+                                <div class="contacts_info_svg">
+                                   <img src="../images/telefone_second.png" alt="">
+                                </div>
+                                <div>
+                                    <p class="contacts_info_text"> Телефон: +7 (47234) 77-100</p>
+                                    <p class="contacts_info_text"> Viber, Whatsapp: +7 (980) 32-77-100</p>
+                                </div>
+                             
+        
+                            </div>
+                            <div class="contacts_info_text_svg_wrapper">
+                                <div class="contacts_svg_wrapper">
+                                   <img src="../images/mail.png" alt="">
+                                </div>
+                                <p class="contacts_info_text">E-mail: food@efko.ru</p>
+                            </div>
+                        </div>
+                       <div class="contacts_info_details_wrapper">
+                            <p class="contacts_info_second_title">Сайт управляющей компании «ЭФКО»:</p>
+                            <div class="contacts_info_text_svg_wrapper">
+                                <div class="contacts_svg_wrapper">
+                                <img src="../images/website_img.png" alt="">
+                                </div>
+                                <p class="contacts_info_text">www.efko.ru</p>
+                            </div>
+                       </div>
+                       <div class="contacts_info_details_wrapper">
+                            <p class="contacts_info_second_title">
+                                Управление по связям с общественностью:
+                            </p>
+                            <div class="contacts_info_text_svg_wrapper">
+                                    <div class="contacts_svg_wrapper">
+                                    <img src="../images/telefone_second.png" alt="">
+                                    </div>
+                                    <p class="contacts_info_text">Телефон: +7 (910) 249-04-09</p>
+                            </div>
+                            <div class="contacts_info_text_svg_wrapper">
+                                <div class="contacts_svg_wrapper">
+                                <img src="../images/mail.png" alt="">
+                                </div>
+                                <p class="contacts_info_text">E-mail: ya.belovolenko@efko.ru</p>
+                            </div>
+                       </div>
+                       <div class="contacts_info_details_wrapper">
+                        <p class="contacts_info_second_title">Отдел подбора персонала:</p>
+                        <div class="contacts_info_text_svg_wrapper">
+                           <div class="contacts_svg_wrapper">
+                           <img src="../images/telefone_second.png" alt="">
+                           </div>
+                           <p class="contacts_info_text">Телефон: +7 (4732) 39-63-04 доб. 167</p>
+                        </div>
+                        <div class="contacts_info_text_svg_wrapper">
+                           <div class="contacts_svg_wrapper">
+                           <img src="../images/mail.png" alt="">
+                           </div>
+                           <p class="contacts_info_text">E-mail: a.mihaleva@efko.ru</p>
+                        </div>
+                       </div>
+                    </div>
+                 
+              
+                </div>
+            </div>
+            
+          </section>
+          <section class="map_sign">
+              <div class="map_sign_wrapper">
+                  <img src="../images/page_sign.png" alt="">
+              </div>
+          </section>
+            <section class="be_the_first_to_know">
+               
+                <div class="be_the_first_to_know_wrapper">
+                    <div class="first_img">
+                        <img src="../images/first_circle.png" alt="">
+                    </div>
+                    <div class="text_wrapper">
+                    <h1 class="be_the_first_to_know_title">Узнавайте первым</h1>
+                    <p class="be_the_first_to_know_title_second">
+                        Будьте в курсе новостей компании и 
+                        узнавайте о предстоящих семинарах
+                    </p>
+                    <form action="" class="be_the_first_to_know_form_wrapper">
+                      <div class="be_the_first_to_know_btn_inputs_wrapper">
+                            <div class="be_the_first_to_know_inputs_wrapper">
+                                <input type="text" placeholder="E-mail" class="input_field">
+                            </div>
+                            <div class="be_the_first_to_know_btn_wrapper">
+                                <button class="btn_field">
+                                    ПОДПИСАТЬСЯ 
+                                </button>
+                            </div>
+                      </div>
+                      <div class="be_the_first_to_know_phone_text_wrapper">
+                          <p class="be_the_first_to_know_phone_number">8-800-250-02-20</p>
+                          <button class="be_the_first_to_know_order_call">
+                            Заказать обратный звонок
+                          </button>
+                      </div>
+                      
+                    </form>
+                </div>
+                </div>
+            </section>
+      </main>
+      <footer>
+          <div class="footer_wrapper">
+              <div class="footer_items_wrapper">
+                  <div class="footer_logo_wrapper">
+                      <a href="">
+                          <img src="../images/footer_logo.png" alt="">
+                      </a>
+                  </div>
+                  <nav class="footer_main_nav">
+                      <ul class="footer_nav_ul_list first_list">
+                       
+                        
+                        
+                        
+                          <li class="footer_ul_li">
+                              <a href="" class="footer_ul_link"> О НАС</a>
+                          </li>
+                          <li class="footer_ul_li">
+                              <a href="" class="footer_ul_link">НОВОСТИ</a>
+                          </li>
+                          <li class="footer_ul_li">
+                              <a href="" class="footer_ul_link">ПЕРСПЕКТИВЫ МИРОВЫХ РЫНКОВ</a>
+                          </li>
+                          <li class="footer_ul_li">
+                              <a href="" class="footer_ul_link">ЕДА БУДУЩЕГО</a>
+                          </li>
+                      </ul>
+                      <ul class="footer_nav_ul_list">
+                        <li class="footer_ul_li">
+                            <a href="" class="footer_ul_link">КАРЬЕРА</a>
+                        </li>
+                        <li class="footer_ul_li">
+                            <a href="" class="footer_ul_link">БИЗНЕС-РЕШЕНИЯ</a>
+                        </li>
+                        <li class="footer_ul_li">
+                            <a href="" class="footer_ul_link"> ИНГРЕДИЕНТЫ</a>
+                        </li>
+                        <li class="footer_ul_li">
+                            <a href="" class="footer_ul_link">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                  </nav>
+              </div>
+              <div class="footer_line"></div>
+              <div class="footer_social_links_wrapper">
+                  <div class="footer_social_link">
+                      <a href="https://www.efko.ru/" class="footer_social_link_path">https://www.efko.ru/</a>
+                  </div>
+                  <div class="footer_social_link">
+                      <a href="http://efko-ingredients.ru/" class="footer_social_link_path">http://efko-ingredients.ru/
+                    </a>
+                    
+                  </div>
+                  <div class="footer_social_link">
+                      <a href="http://biruch.ru/" class="footer_social_link_path">http://biruch.ru/</a>
+                  </div>
+                  <div class="footer_social_link">
+                      <a href="http://biruch.efko.ru/" class="footer_social_link_path">http://biruch.efko.ru/</a>
+                  </div>
+                  <div class="footer_social_link">
+                      <a href="https://www.efkofood.ru/" class="footer_social_link_path">https://www.efkofood.ru/</a>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/script.js">
+    </script>
+</body>
+</html>
+
+
+
+
+
+    
